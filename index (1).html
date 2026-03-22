@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>🌌 宇宙感謝ポエム変換器</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&family=Shippori+Mincho:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- 星空背景パーティクル -->
+  <div id="stars"></div>
+
+  <div class="app-wrapper">
+    <!-- ヘッダー -->
+    <header class="chat-header">
+      <div class="header-avatar">🌌</div>
+      <div class="header-info">
+        <div class="header-name">宇宙感謝ポエム変換器</div>
+        <div class="header-status">
+          <span class="status-dot"></span>オンライン
+        </div>
+      </div>
+    </header>
+
+    <!-- チャットエリア -->
+    <main class="chat-body" id="chatBody">
+      <!-- 最初のガイドメッセージ -->
+      <div class="message-group received">
+        <div class="avatar">🌌</div>
+        <div class="bubble-wrap">
+          <div class="bubble">
+            ようこそ。<br>
+            あなたのネガティブな言葉を、宇宙の真理が感謝のポエムへと昇華します。<br><br>
+            心に溜まったものを、そのまま送ってください。
+          </div>
+          <div class="timestamp">宇宙時間 ∞</div>
+        </div>
+      </div>
+    </main>
+
+    <!-- ローディングオーバーレイ -->
+    <div class="loading-overlay" id="loadingOverlay">
+      <div class="loading-content">
+        <div class="cosmic-spinner">
+          <div class="ring ring1"></div>
+          <div class="ring ring2"></div>
+          <div class="ring ring3"></div>
+          <div class="core">✨</div>
+        </div>
+        <p class="loading-text" id="loadingText">宇宙の真理から感謝を紡いでいます…</p>
+        <p class="loading-sub">しばらくお待ちください</p>
+      </div>
+    </div>
+
+    <!-- 入力エリア -->
+    <footer class="chat-footer">
+      <textarea
+        id="userInput"
+        class="input-box"
+        placeholder="ネガティブな言葉を入力…（例：最悪な一日だった）"
+        rows="1"
+        maxlength="500"
+      ></textarea>
+      <button class="send-btn" id="sendBtn" onclick="sendMessage()">
+        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M22 2L11 13" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M22 2L15 22L11 13L2 9L22 2Z" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </button>
+    </footer>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
