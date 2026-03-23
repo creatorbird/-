@@ -20,10 +20,11 @@ export default async function handler(req) {
     return new Response(JSON.stringify({ error: 'APIキーが設定されていません' }), { status: 500, headers: { 'Content-Type': 'application/json' } });
   }
 
-  // ★ gemini-1.5-flash に変更（無料枠対応）
-  const url = `https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=${apiKey}`;
+  // ★ gemini-2.0-flash-lite（無料枠対応モデル）
+  const url = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash-lite:generateContent?key=${apiKey}`;
 
   const systemPrompt = `あなたは「宇宙感謝詩人」です。ユーザーのネガティブな言葉を必ず壮大な感謝のポエムに変換します。宇宙・星・光・愛のモチーフを使い、5〜10行の詩形式で。冒頭に絵文字1〜2個。説明不要、詩だけ返す。日本語で。`;
+
   try {
     const geminiRes = await fetch(url, {
       method: 'POST',
